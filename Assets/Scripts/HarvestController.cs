@@ -41,8 +41,7 @@ public class HarvestController : MonoBehaviour
             yield return null;
         }
         
-        // Collect item
-        
+        Inventory.Instance.Add(currentItem);
         ChangeToItem(GetRandomHarvestItem());
         harvestButton.interactable = true;
         harvestBar.fillAmount = 1f;
