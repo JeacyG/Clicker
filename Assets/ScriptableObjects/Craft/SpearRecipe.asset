@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5851dfa4608691419d062cf3ce933e3, type: 3}
+  m_Name: SpearRecipe
+  m_EditorClassIdentifier: Assembly-CSharp::CraftingRecipeSO
+  ingredients:
+  - item: {fileID: 11400000, guid: 123ec294a1574584a8a7a5af78a817a8, type: 2}
+    quantity: 1
+  - item: {fileID: 11400000, guid: 6f6a3c4793b864a4ca30395df481cd34, type: 2}
+    quantity: 1
+  - item: {fileID: 11400000, guid: fd1423b2cda62da4881080acada240d7, type: 2}
+    quantity: 1
+  result: {fileID: 11400000, guid: 860382720095804448f870ae54e7a212, type: 2}
+  resultQuantity: 1
+  timeToCraft: 1

@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d5851dfa4608691419d062cf3ce933e3, type: 3}
-  m_Name: BowRecipe
+  m_Name: RopeRecipe
   m_EditorClassIdentifier: Assembly-CSharp::CraftingRecipeSO
   ingredients:
-  - item: {fileID: 11400000, guid: 6f6a3c4793b864a4ca30395df481cd34, type: 2}
+  - item: {fileID: 11400000, guid: 4a70a55601dab7248a821eb0aee7a63c, type: 2}
     quantity: 2
-  result: {fileID: 11400000, guid: 9df89e500c0711047adb7e5386724503, type: 2}
+  result: {fileID: 11400000, guid: fd1423b2cda62da4881080acada240d7, type: 2}
   resultQuantity: 1
+  timeToCraft: 1
