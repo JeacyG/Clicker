@@ -37,4 +37,14 @@ public class Inventory
         items[item] = Math.Max(items[item] - amount, 0);
         OnInventoryChanged?.Invoke(item, items[item]);
     }
+
+    public bool Contains(ItemSO item, int amount)
+    {
+        if (!items.ContainsKey(item))
+        {
+            return false;
+        }
+        
+        return items[item] >= amount;
+    }
 }

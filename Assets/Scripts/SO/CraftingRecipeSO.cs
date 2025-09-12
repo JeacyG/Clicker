@@ -13,4 +13,5 @@ public class CraftingRecipeSO : ScriptableObject
     public Ingredient[] ingredients;
     public ItemSO result;
     public int resultQuantity = 1;
+    public float timeToCraft = 0f;
 }
