@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1238517252fc20d40ae3ddef7e700219, type: 3}
+  m_Name: IronPlate
+  m_EditorClassIdentifier: Assembly-CSharp::ItemSO
+  itemName: IronPlate
+  tier: 2
+  recipe: {fileID: 11400000, guid: ffb001a261f22c641aef360be4d58533, type: 2}
+  itemsToUnlock:
+  - {fileID: 11400000, guid: bc0bef6ab09e05c478dc344dfe03158d, type: 2}
+  - {fileID: 11400000, guid: e09a7931cb6944f47a6d834752ea3657, type: 2}
+  - {fileID: 11400000, guid: e5a3fb53f71fdbb46ae1d89cd970fc0c, type: 2}
+  - {fileID: 11400000, guid: 233b40d89bfb9d945b099d1925021804, type: 2}
+  icon: {fileID: 0}

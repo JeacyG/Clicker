@@ -1,26 +1,30 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ItemController : MonoBehaviour
+public class ItemController : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private ItemSO item;
     [SerializeField] private Button button;
     [SerializeField] private TMP_Text itemName;
     [SerializeField] private TMP_Text itemAmount;
     [SerializeField] private Image craftingBar;
-
-    private bool activated = false;
+    [SerializeField] private float timeUntilTooltip = 1.0f;
+    [SerializeField] private TooltipController tooltip;
+    [SerializeField] private Image highlight;
+    
+    public ItemSO Item => item;
 
     private Coroutine craftCoroutine = null;
+    private Coroutine tooltipCoroutine = null;
 
-    private void Awake()
+    public void Initialize(ItemSO inItem)
     {
-        if (item == null)
-            return;
+        item = inItem;
+        tooltip.Initialize();
         
-        // activated = PlayerPrefs.GetInt(item.itemName + "Activated") == 1;
         gameObject.SetActive(true);
         craftingBar.enabled = false;
         
@@ -36,7 +40,7 @@ public class ItemController : MonoBehaviour
 
     public void OnClick()
     {
-        if (craftCoroutine != null)
+        if (craftCoroutine != null || Inventory.Instance.ManualCrafting)
             return;
 
         if (!CanCraft())
@@ -70,6 +74,7 @@ public class ItemController : MonoBehaviour
         if (recipe == null)
             return;
 
+        Inventory.Instance.ManualCrafting = true;
         craftCoroutine = StartCoroutine(CraftCoroutine());
     }
 
@@ -96,6 +101,7 @@ public class ItemController : MonoBehaviour
         
         Inventory.Instance.Add(recipe.result, recipe.resultQuantity);
         
+        Inventory.Instance.ManualCrafting = false;
         craftCoroutine = null;
     }
 
@@ -105,10 +111,53 @@ public class ItemController : MonoBehaviour
         {
             return;
         }
-
-        if (!activated)
-            activated = true;
         
         itemAmount.text = amount.ToString();
+    }
+
+    public void SetHighlight(bool bActive)
+    {
+        highlight.gameObject.SetActive(bActive);
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        tooltipCoroutine = StartCoroutine(TooltipCoroutine());
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if (tooltipCoroutine != null)
+        {
+            StopCoroutine(tooltipCoroutine);
+            tooltipCoroutine = null;
+        }
+        tooltip.gameObject.SetActive(false);
+        if (item.recipe)
+        {
+            foreach (CraftingRecipeSO.Ingredient ingredient in item.recipe.ingredients)
+            {
+                ItemController controller = Inventory.Instance.GetController(ingredient.item);
+                if (controller)
+                    controller.SetHighlight(false);
+            }
+        }
+    }
+
+    private IEnumerator TooltipCoroutine()
+    {
+        yield return new WaitForSeconds(timeUntilTooltip);
+        tooltip.gameObject.SetActive(true);
+        if (item.recipe)
+        {
+            foreach (CraftingRecipeSO.Ingredient ingredient in item.recipe.ingredients)
+            {
+                ItemController controller = Inventory.Instance.GetController(ingredient.item);
+                if (controller)
+                    controller.SetHighlight(true);
+            }
+        }
+        
+        tooltipCoroutine = null;
     }
 }

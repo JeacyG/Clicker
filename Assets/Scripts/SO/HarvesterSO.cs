@@ -11,6 +11,12 @@ public class HarvesterSO : ScriptableObject
         public ItemSO item;
         public int weight;
     }
-    
+
+    public string harvesterName;
     public HarvestableItem[] possibleItems;
+
+    private void OnValidate()
+    {
+        harvesterName = this.name;
+    }
 }

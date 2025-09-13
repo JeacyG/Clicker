@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bcd80e84e9df5e499b5ae8fb502d529, type: 3}
   m_Name: Quarry
   m_EditorClassIdentifier: Assembly-CSharp::HarvesterSO
+  harvesterName: Quarry
   possibleItems:
   - requirement: {fileID: 0}
-    item: {fileID: 11400000, guid: 123ec294a1574584a8a7a5af78a817a8, type: 2}
+    item: {fileID: 11400000, guid: 7742e3a28fdd6aa4dbc9a1989e7f3d1f, type: 2}
     weight: 70
