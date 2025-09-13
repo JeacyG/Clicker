@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1238517252fc20d40ae3ddef7e700219, type: 3}
+  m_Name: MoonstonePowder
+  m_EditorClassIdentifier: Assembly-CSharp::ItemSO
+  itemName: MoonstonePowder
+  tier: 1
+  recipe: {fileID: 11400000, guid: 60c089e5228fd874a9bc2fa35d8c6d0f, type: 2}
+  itemsToUnlock:
+  - {fileID: 11400000, guid: 64c3176d5c4cc154eaec02c90205aaf1, type: 2}
+  icon: {fileID: 0}

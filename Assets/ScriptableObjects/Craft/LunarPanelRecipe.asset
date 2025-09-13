@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5851dfa4608691419d062cf3ce933e3, type: 3}
+  m_Name: LunarPanelRecipe
+  m_EditorClassIdentifier: Assembly-CSharp::CraftingRecipeSO
+  ingredients:
+  - item: {fileID: 11400000, guid: 865f95a8005d842448cbd4f086328480, type: 2}
+    quantity: 4
+  - item: {fileID: 11400000, guid: f498c155fa35790498bc7f60c964d42b, type: 2}
+    quantity: 1
+  - item: {fileID: 11400000, guid: b73ce478aa1cfaa41811d78282abee37, type: 2}
+    quantity: 2
+  result: {fileID: 11400000, guid: dd5745af8e349ff4a852cb1f50d42369, type: 2}
+  resultQuantity: 1
+  timeToCraft: 5
