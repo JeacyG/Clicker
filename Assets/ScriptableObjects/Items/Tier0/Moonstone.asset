@@ -15,5 +15,6 @@ MonoBehaviour:
   itemName: Moonstone
   tier: 0
   recipe: {fileID: 0}
-  itemsToUnlock: []
+  itemsToUnlock:
+  - {fileID: 11400000, guid: b73ce478aa1cfaa41811d78282abee37, type: 2}
   icon: {fileID: 0}

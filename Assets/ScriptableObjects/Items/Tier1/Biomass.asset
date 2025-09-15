@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1238517252fc20d40ae3ddef7e700219, type: 3}
   m_Name: Biomass
   m_EditorClassIdentifier: Assembly-CSharp::ItemSO
-  itemName: Biomass
+  itemName: FairyHair
   tier: 1
   recipe: {fileID: 11400000, guid: 5957cc7a537e0c2419d61f9be89baf40, type: 2}
   itemsToUnlock: []
